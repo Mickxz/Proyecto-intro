@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class ProyectoConfig(AppConfig):
+class JuegoConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'proyecto'
+    name = 'Juego'
