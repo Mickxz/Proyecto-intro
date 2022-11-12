@@ -1,19 +1,25 @@
 {% load static %}
-    <script src=" {% static 'movimiento.js' %}" ></script>
-    <link rel="stylesheet" href="{% static 'juego.css' %}">
-<div class="frame">
-    <div class="corner_topleft"></div>
-    <div class="corner_topright"></div>
-    <div class="corner_bottomleft"></div>
-    <div class="corner_bottomright"></div>
+<!DOCTYPE html>
+<html>
+
+<script src= "{% static 'CSS_JS/movimiento.js' %}" >
+</script>
+<link rel="stylesheet" href="{% static 'CSS_JS/juego.css' %}">
+
+<body>
+    
+    <div class="frame">
+        <div class="corner_topleft"></div>
+        <div class="corner_topright"></div>
+        <div class="corner_bottomleft"></div>
+        <div class="corner_bottomright"></div>
 
 
-    <div class="camera">
-        <div class="map">
-            <div class="character pixel-art" facing="down" 
-            walking="true">
-            <div class="character pixel-art"></div>
+        <div class="camera">
+            <div class="map">
+                <div class="character pixel-art" facing="down" 
+                walking="true">
+                </div>
             </div>
-        </div>
-
+</body>
 </html>

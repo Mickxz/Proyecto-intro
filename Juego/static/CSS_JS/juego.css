@@ -4,7 +4,12 @@
 }
 @media( min-width: 700px) {
     :root {
-        --pixel-size:4;
+        --pixel-size:3px;
+    }
+}
+@media( min-width: 900px) {
+    :root {
+        --pixel-size:4px;
     }
 }
 
@@ -17,6 +22,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background: #3b4eff;
 }
 
 
@@ -27,7 +33,7 @@ body {
     /* This is just for Pen decoration */
     width: calc(var(--pixel-size) * 160);
     height: calc(var(--pixel-size) * 144);
-    outline: var(--pixel-size) solid rgb(233, 245, 188);
+    outline: var(--pixel-size) solid rgb(35, 123, 255);
     z-index:1; 
     position:relative;
 }
@@ -47,6 +53,7 @@ body {
     width: calc(13 * var(--grid-cell));
     height: calc(10 * var(--grid-cell));
     position: relative;
+    background-repeat: no-repeat;
 }
 
 .character {
@@ -54,6 +61,7 @@ body {
     height:  calc(var(--grid-cell)* 2);
     position: absolute;
     background-image: url(https://github.com/Mickxz/Proyecto-intro/blob/a42b124eefeae1bfc9fdcd50bc20ca0ca7d3851d/Juego/static/image/personajes/personaje0.png?raw=true);
+    background-repeat: no-repeat;
 }
 
 .corner_topleft,
@@ -63,7 +71,7 @@ body {
     position: absolute;
     width: var(--pixel-size);
     height: var(--pixel-size);
-    background: rgb(125, 138, 255);
+    background: rgba(255, 255, 255, 0);
     z-index: 2;
 }
 

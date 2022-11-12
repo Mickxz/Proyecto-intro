@@ -1,10 +1,10 @@
-var character = document.querySelector(".character");
-var map = document.querySelector(".map");
+var character = document.getElementById(".character");
+var map = document.getElementById(".map");
 
 //comienza en el centro del mapa
 var x = 90;
 var y = 34;
-var held_directions = []; //Que botonoes estamos apretando
+var held_directions = []; //Que botones estamos apretando
 var speed = 1; // Razón de movimiento del personaje
 
 const placeCharacter = () => {
