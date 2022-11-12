@@ -10,20 +10,19 @@ var speed = 1; // Razón de movimiento del personaje
 const placeCharacter = () => {
 
     var pixelSize = parseInt(
-    getComputedStyle(document.documentElement).getPropertyValue('--pixel-size')
-);
+        getComputedStyle(document.documentElement).getPropertyValue('--pixel-size')
+    );
 
-const held_direction = held_directions[0];
-if (held_direction) {
-    if (held_direction === directions.right) {x += speed;}
-    if (held_direction === directions.left) {x -= speed;}
-    if (held_direction === directions.down) {y += speed;}
-    if (held_direction === directions.up) {y -= speed;}
-    character.setAttribute("facing", held_direction);
-}
-character.setAttribute("walking",held_direction ? "true" : "false");
-
-//limits
+    const held_direction = held_directions[0];
+    if (held_direction) {
+        if (held_direction === directions.right) {x += speed;}
+        if (held_direction === directions.left) {x -= speed;}
+        if (held_direction === directions.down) {y += speed;}
+        if (held_direction === directions.up) {y -= speed;}
+        character.setAttribute("facing", held_direction);
+    }
+    character.setAttribute("walking",held_direction ? "true" : "false");
+    //limits
     var leftLimit = -8;
     var rightLimit = (16 * 11)+8;
     var topLimit = -8 + 32;
@@ -34,13 +33,25 @@ character.setAttribute("walking",held_direction ? "true" : "false");
     if (y > bottomLimit) { y = bottomLimit; }
 
 
-   var camera_left = pixelSize * 66;
-   var camera_top = pixelSize * 42;
+    var camera_left = pixelSize * 66;
+    var camera_top = pixelSize * 42;
 
     map.style.transform = `translate3d( ${-x*pixelSize+camera_left}px, ${-y*pixelSize+camera_top}px, 0 )`;
-    character.style.transform = `translate3d( ${x*pixelSize}px, ${y*pixelSize}px, 0 )`; 
+    character.style.transform = `translate3d( ${x*pixelSize}px, ${y*pixelSize}px, 0 )`;  
 }
 //. loop del juego
+const step = () => {
+    placeCharacter();
+    window.requestAnimationFrame(() => {
+        step();
+    })
+}
+step(); 
+
+
+
+
+
 const directions = {
     up:"up",
     down:"down",
@@ -53,6 +64,7 @@ const keys = {
     39:directions.right,
     40:directions.down
 }
+
 document.addEventListener("keydown", (e) => {   //Cuando apretas un boton
     var dir= keys[e.which];
     if(dir && held_directions.indexOf(dir) === -1) {
@@ -60,10 +72,15 @@ document.addEventListener("keydown", (e) => {   //Cuando apretas un boton
     }
 })
 
-document.removeEventListener("keyup", (e) => {  //cuando dejas de apretar un boton
+document.addEventListener("keyup", (e) => {  //cuando dejas de apretar un boton
     var dir = keys[e.which];
     var index = held_directions.indexOf(dir)
     if (index > -1) {
-        held_directions.splice(index,1)
+        held_directions.splice(index, 1)
     }
 });
+
+
+
+
+
