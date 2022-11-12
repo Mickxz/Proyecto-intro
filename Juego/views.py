@@ -9,3 +9,7 @@ def index(request):
     template = "main/index.html"
     return render (request, template)
 #tener como fondo el mapa, canva html, movement xy, plano cartesiano, js.
+def menu(request):
+    return render(request,"menu.html")
+def estilos(request):
+    return render(request,"estilos.css")
