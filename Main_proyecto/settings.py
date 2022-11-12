@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Juego'
 ]
 
 MIDDLEWARE = [
@@ -119,8 +118,11 @@ USE_TZ = True
 STATIC_URL = 'static/'
 MEDIA_URL = 'imagenes/'
 
+<<<<<<< HEAD
 STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
 
+=======
+>>>>>>> parent of 530f026 (a)
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 

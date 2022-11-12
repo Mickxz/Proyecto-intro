@@ -1,0 +1,11 @@
+{% extends 'base.html' %} #Navegación por defecto
+
+{% load static %}
+
+{% block content %}
+
+<h1>Welcome To django apps</h1>
+<p>{% lorem 30 %}</p>
+<img src= "{% static "Arte UI/cuadrosdetexto.png" %}" alt="Hi!">
+
+{% endblock  %}

@@ -41,7 +41,7 @@ body {
 }
 .map {
     image-rendering: pixelated;
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhnJOoZW-2LyF-2R8QbjASNTwQoxXEljuKEkstBw0MqT2r5RQ_);
+    background-image: url(https://github.com/Mickxz/Proyecto-intro/blob/198e405847db927dac85481e402fdd27e300d95d/Juego/static/image/Mapas/mapa.png?raw=true);
     background-size: 100%;
     width: calc(13 * var(--grid-cell));
     height: calc(10 * var(--grid-cell));
@@ -52,7 +52,7 @@ body {
     width:  calc(var(--grid-cell)* 2);
     height:  calc(var(--grid-cell)* 2);
     position: absolute;
-    overflow: hidden;
+    background-image:url();
 }
 
 .corner_topleft,
