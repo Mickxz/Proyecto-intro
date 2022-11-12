@@ -1,5 +1,5 @@
-var character = document.getElementById(".character");
-var map = document.getElementById(".map");
+var character = document.querySelector(".character");
+var map = document.querySelector(".map");
 
 //comienza en el centro del mapa
 var x = 90;
