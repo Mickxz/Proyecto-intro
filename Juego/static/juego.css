@@ -27,7 +27,7 @@ body {
     /* This is just for Pen decoration */
     width: calc(var(--pixel-size) * 160);
     height: calc(var(--pixel-size) * 144);
-    outline: var(--pixel-size) solid #fff;
+    outline: var(--pixel-size) solid rgb(233, 245, 188);
     z-index:1; 
     position:relative;
 }
@@ -38,10 +38,11 @@ body {
     overflow: hidden;
     background: #61ddf7;
     position:relative;
+    outline: solid red;
 }
 .map {
     image-rendering: pixelated;
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhnJOoZW-2LyF-2R8QbjASNTwQoxXEljuKEkstBw0MqT2r5RQ_);
+    background-image: url(https://github.com/Mickxz/Proyecto-intro/blob/198e405847db927dac85481e402fdd27e300d95d/Juego/static/image/Mapas/mapa.png?raw=true);
     background-size: 100%;
     width: calc(13 * var(--grid-cell));
     height: calc(10 * var(--grid-cell));
@@ -52,7 +53,7 @@ body {
     width:  calc(var(--grid-cell)* 2);
     height:  calc(var(--grid-cell)* 2);
     position: absolute;
-    overflow: hidden;
+    background-image: url(https://github.com/Mickxz/Proyecto-intro/blob/a42b124eefeae1bfc9fdcd50bc20ca0ca7d3851d/Juego/static/image/personajes/personaje0.png?raw=true);
 }
 
 .corner_topleft,
@@ -62,7 +63,7 @@ body {
     position: absolute;
     width: var(--pixel-size);
     height: var(--pixel-size);
-    background: var(--bg);
+    background: rgb(125, 138, 255);
     z-index: 2;
 }
 

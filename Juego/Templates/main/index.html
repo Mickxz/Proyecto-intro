@@ -1,21 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
 {% load static %}
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-    content="width=device-width,
-    initial-scale=1.0">
-    <title>The prestigious way</title>
-    
-</head>
-
-<body>
-    <script src=" {% static 'JS/movimiento.js' %}" ></script>
-    <style src= " {% static 'CSS/juego.css' %}"></style>
-</body>
-    <h1>The prestigious way</h1>
+    <script src=" {% static 'movimiento.js' %}" ></script>
+    <link rel="stylesheet" href="{% static 'juego.css' %}">
 <div class="frame">
     <div class="corner_topleft"></div>
     <div class="corner_topright"></div>
@@ -24,11 +9,10 @@
 
 
     <div class="camera">
-        <div class="map pixel-art">
-            <div class="character" facing="down" 
+        <div class="map">
+            <div class="character pixel-art" facing="down" 
             walking="true">
-            <div class="shadow pixel-art"></div>
-            <div class="character_spritesheet pixel-art"></div>
+            <div class="character pixel-art"></div>
             </div>
         </div>
 
