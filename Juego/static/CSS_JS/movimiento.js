@@ -9,8 +9,7 @@ var speed = 1; // Razón de movimiento del personaje
 
 const placeCharacter = () => {
 
-    var pixelSize = parseInt(
-        getComputedStyle(document.documentElement).getPropertyValue('--pixel-size')
+    var pixelSize = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--pixel-size')
     );
 
     const held_direction = held_directions[0];
@@ -21,7 +20,7 @@ const placeCharacter = () => {
         if (held_direction === directions.up) {y -= speed;}
         character.setAttribute("facing", held_direction);
     }
-    character.setAttribute("walking",held_direction ? "true" : "false");
+    character.setAttribute("walking", held_direction ? "true" : "false");
     //limits
     var leftLimit = -8;
     var rightLimit = (16 * 11)+8;
@@ -48,10 +47,6 @@ const step = () => {
 }
 step(); 
 
-
-
-
-
 const directions = {
     up:"up",
     down:"down",
@@ -62,7 +57,7 @@ const keys = {
     38:directions.up,
     37:directions.left,
     39:directions.right,
-    40:directions.down
+    40:directions.down,
 }
 
 document.addEventListener("keydown", (e) => {   //Cuando apretas un boton

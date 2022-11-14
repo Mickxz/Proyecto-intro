@@ -63,7 +63,43 @@ body {
     background-image: url(https://github.com/Mickxz/Proyecto-intro/blob/a42b124eefeae1bfc9fdcd50bc20ca0ca7d3851d/Juego/static/image/personajes/personaje0.png?raw=true);
     background-repeat: no-repeat;
 }
+.shadow {
+    width: calc( var(--grid-cell)* 2 );
+    height: calc( var(--grid-cell)* 2 );
+    position: absolute;
+    left:0;
+    top:0;
+    background: url("https://assets.codepen.io/21542/DemoRpgCharacterShadow.png") no-repeat no-repeat;
+    background-size: 100%;
+}
 
+.character_spritesheet {
+    position: absolute;
+    background: url("https://assets.codepen.io/21542/DemoRpgCharacter.png") no-repeat no-repeat;
+    background-size: 100%;
+    width: calc( var(--grid-cell)* 8 );
+    height: calc( var(--grid-cell)* 8 );
+}
+.character[facing="right"] .character_spritesheet {
+    background-position-y: calc( var(--pixel-size) * -32 );
+}
+.character[facing="up"] .character_spritesheet {
+    background-position-y: calc( var(--pixel-size) * -64 );
+}
+.character[facing="left"] .character_spritesheet {
+    background-position-y: calc( var(--pixel-size) * -96 );
+}
+.character[walking="true"] .character_spritesheet {
+    animation: walkAnimation 0.6s steps(4) infinite; 
+}
+@keyframes walkAnimation { 
+    from {
+        transform: translate3d(0%,0%,0);
+    }
+    to {
+        transform: translate3d(-100%,0%,0);
+    }
+}
 .corner_topleft,
 .corner_topright,
 .corner_bottomleft,
