@@ -30,7 +30,7 @@ body {
     image-rendering: pixelated;
 }
 .frame {
-    /* This is just for Pen decoration */
+    
     width: calc(var(--pixel-size) * 160);
     height: calc(var(--pixel-size) * 144);
     outline: var(--pixel-size) solid rgb(35, 123, 255);
