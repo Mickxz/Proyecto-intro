@@ -60,7 +60,7 @@ body {
     width:  calc(var(--grid-cell)* 2);
     height:  calc(var(--grid-cell)* 2);
     position: absolute;
-    background-image: url(https://github.com/Mickxz/Proyecto-intro/blob/a42b124eefeae1bfc9fdcd50bc20ca0ca7d3851d/Juego/static/image/personajes/personaje0.png?raw=true);
+    background-image: url(https://github.com/Mickxz/Proyecto-intro/blob/3a62fa09e582bea879ddaa7b4cab0ccc679e2f70/Juego/static/image/personajes/protagonista.png?raw=true);
     background-repeat: no-repeat;
 }
 .shadow {

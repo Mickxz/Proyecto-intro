@@ -1,0 +1,56 @@
+{% load static %} 
+<link rel="stylesheet" href="{% static 'estilos.css' %}" />
+
+
+<head>
+    
+    <style>
+
+        .contenedor{
+            weidth:100%;
+            height:100%;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: -16%;
+            
+        }
+        .text{
+            position:absolute;
+            font-family: Georgia, "Times";
+            
+        }
+        
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        a:hover{
+            color: black;
+        }
+
+        .titulo{
+            display:flex;
+            justify-content: center;
+            align-self: center;
+            font-family: Georgia, "Times";
+            margin-top: 10%
+        }
+        
+    </style>
+<body>
+    <div class="titulo">
+        <h1>THE PRESTIGIUS WAY</h1>
+    </div>
+    <div class="contenedor">
+        <img src="/static/image/Arte_UI/cuadrosdetexto.png" height="120px" widht="110px">
+        <div class="text">
+            <div style="flex-direction: column; width: 110px; display: flex;">
+                <a href="/index" style="width: 200px;">INICIAR PARTIDA</a>
+                <a href="/index" style="width: 200px;">CARGAR PARTIDA</a>
+            </div>
+        </div>
+
+    </div>
+    
+</body>
