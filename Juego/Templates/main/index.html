@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+
+<link rel="stylesheet" href="{% static 'CSS_JS/juego.css' %}">
+
+<body>
+    
+    <div class="frame">
+        <div class="corner_topleft"></div>
+        <div class="corner_topright"></div>
+        <div class="corner_bottomleft"></div>
+        <div class="corner_bottomright"></div>
+
+        <div class="camera">
+            <div class="map pixel-art">
+                <div class="character pixel-art" facing="down" 
+                walking="true">
+                    <div class="shadow pixel-art"></div>
+                    <div class="character-spritesheet pixel-art"></div>
+                </div>
+            </div>
+</body>
+<script type="text/javascript" src= "{% static 'CSS_JS/movimiento.js' %}" ></script>
+</html>
