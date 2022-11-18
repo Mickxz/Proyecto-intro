@@ -50,8 +50,8 @@ body {
     image-rendering: pixelated;
     background-image: url(https://github.com/Mickxz/Proyecto-intro/blob/198e405847db927dac85481e402fdd27e300d95d/Juego/static/image/Mapas/mapa.png?raw=true);
     background-size: 100%;
-    width: calc(13 * var(--grid-cell));
-    height: calc(10 * var(--grid-cell));
+    width: 400%;
+    height: 400%;
     position: relative;
     background-repeat: no-repeat;
 }
