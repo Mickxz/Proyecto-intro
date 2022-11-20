@@ -26,10 +26,10 @@ const placeCharacter = () => {
     var rightLimit = (16 * 11)+8;
     var topLimit = -8 + 32;
     var bottomLimit = (16 * 7);
-    if (x < leftLimit) { x = leftLimit; }
-    if (x > rightLimit) { x = rightLimit; }
-    if (y < topLimit) { y = topLimit; }
-    if (y > bottomLimit) { y = bottomLimit; }
+    //if (x < leftLimit) { x = leftLimit; }
+    //if (x > rightLimit) { x = rightLimit; }
+    //if (y < topLimit) { y = topLimit; }
+    //if (y > bottomLimit) { y = bottomLimit; }
 
 
     var camera_left = pixelSize * 66;
