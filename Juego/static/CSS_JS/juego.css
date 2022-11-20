@@ -49,10 +49,10 @@ body {
 .map {
     image-rendering: pixelated;
     background-image: url(https://github.com/Mickxz/Proyecto-intro/blob/e4cf8b75043915330ca8dc31995c2fa11672db29/Juego/static/image/Mapas/new_map.png?raw=true);
-    background-size: 100%;
-    width:400%;
-    height:400%;
-    position: relative;
+    background-size:contain;
+    width:1000%;
+    height:1000%;
+    position: absolute;
     background-repeat: no-repeat;
 }
 
