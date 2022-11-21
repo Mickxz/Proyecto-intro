@@ -4,31 +4,31 @@
 
 
 <link rel="stylesheet" href="{% static 'CSS_JS/juego.css' %}">
-<link rel="stylesheet" href="{% static 'CSS_JS/mensaje_de_texto_css' %}">
+<link rel="stylesheet" href="{% static 'CSS_JS/mensaje_de_texto.css' %}">
 <body>
-    <div class="TextMessage">
-        <div class="TextMessage_p">
-            Bienvenido a la USM
-        </div>
-    </div>
+    
     <div class="frame">
         <div class="corner_topleft"></div>
         <div class="corner_topright"></div>
         <div class="corner_bottomleft"></div>
         <div class="corner_bottomright"></div>
-
-        <div class="camera">
-            <div class="map pixel-art">
-                <div class="character pixel-art" facing="down" 
-                walking="true">
-                    <div class="shadow pixel-art"></div>
-                    <div class="character-spritesheet pixel-art"></div>
-                </div>
-
-            </div>
+        
     
+    <div class="camera">
+        
+        <div class="map pixel-art">
+            <div class="character pixel-art" facing="down" walking="true">
+                <div class="shadow pixel-art"></div>
+                <div class="character-spritesheet pixel-art"></div>
+        </div>
+        
+    </div>
 </body>
-<script type="text/javascript" src= "{% static 'CSS_JS/movimiento.js' %}" ></script>
-<script type="text/javascript" src= "{% static 'CSS_JS/Text_Message.js' %}"></script>
-<script type="text/javascript" src= "{% static 'CSS_JS/Revelador_de_texto.js' %}"></script>
+<div class="cuadro_de_texto">
+    <div class="TextMessage"> Bienvenido a la USM! </div>
+</div>
+<script  src= "{% static 'CSS_JS/movimiento.js' %}" ></script>
+<script  src= "{% static 'CSS_JS/Revelador_de_texto.js' %}"></script>
+<script  src= "{% static 'CSS_JS/Text_Message.js' %}"></script>
+
 </html>

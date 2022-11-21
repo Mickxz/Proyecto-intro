@@ -133,3 +133,9 @@ body {
     right:calc(var(--pixel-size) * 2);
     width: calc(var(--pixel-size) * 75)
 }
+
+.cuadro_de_texto {
+    width: calc(var(--pixel-size) * 160);
+    height: 60px;
+    overflow: hidden;
+}
