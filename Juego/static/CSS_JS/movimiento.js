@@ -2,7 +2,7 @@ var character = document.querySelector(".character");
 var map = document.querySelector(".map");
 
 //comienza en el centro del mapa
-var x = 90;
+var x = 90; 
 var y = 34;
 var held_directions = []; //Que botones estamos apretando
 var speed = 1; // Razón de movimiento del personaje
@@ -35,7 +35,7 @@ const placeCharacter = () => {
     var camera_left = pixelSize * 66;
     var camera_top = pixelSize * 42;
 
-    map.style.transform = `translate3d( ${-x*pixelSize+camera_left}px, ${-y*pixelSize+camera_top}px, 0 )`;
+    map.style.transform = `translate3d( ${-x*pixelSize+camera_left}px, ${-y*pixelSize+camera_top}px, 0 )`; // esta es la posición del mapa (lo importante)
     character.style.transform = `translate3d( ${x*pixelSize}px, ${y*pixelSize}px, 0 )`;  
 }
 //. loop del juego
