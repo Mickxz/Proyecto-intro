@@ -9,3 +9,7 @@ def index(request):
 
 def menu(request): #Página menú
     return render(request,"menu.html")
+def f(request,x,y):
+    
+    #response.render()
+    return JsonResponse({'x': x, 'y':y})

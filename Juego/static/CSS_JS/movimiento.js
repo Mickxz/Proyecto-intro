@@ -6,6 +6,10 @@ var x = 90;
 var y = 34;
 var held_directions = []; //Que botones estamos apretando
 var speed = 1; // Razón de movimiento del personaje
+ruta = '/posicion/'+x+"/"+y;
+$.get(ruta, function(data){
+    console.log(data.x, data.y)
+})
 
 const placeCharacter = () => {
 
