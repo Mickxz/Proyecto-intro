@@ -1,3 +1,9 @@
+// setup de las cookies
+function setCookie(cName,cValue) {
+    document.cookie = cName + "=" + cValue  + ";path=/"}
+
+
+
 var character = document.querySelector(".character"); 
 var map = document.querySelector(".map");
 
@@ -34,7 +40,7 @@ const placeCharacter = () => {
 
     var camera_left = pixelSize * 66;
     var camera_top = pixelSize * 42;
-
+    document.cookie = "camera_left= "+ camera_left + ";";
     map.style.transform = `translate3d( ${-x*pixelSize+camera_left}px, ${-y*pixelSize+camera_top}px, 0 )`; // esta es la posición del mapa (lo importante)
     character.style.transform = `translate3d( ${x*pixelSize}px, ${y*pixelSize}px, 0 )`;  
 }
