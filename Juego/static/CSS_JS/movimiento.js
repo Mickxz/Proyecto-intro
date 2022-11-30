@@ -1,7 +1,17 @@
 // setup de las cookies
-function setCookie(cName,cValue) {
-    document.cookie = cName + "=" + cValue  + ";path=/"}
+function setCookie(cName,cValue) { // función para setear cookies
+    document.cookie = cName + "=" + cValue  + ";path=/"};
 
+function getCookie(cName) {
+    const name = cName + "=";
+    const cDecoded = decodeURIComponent(document.cookie);
+    const cArr = cDecoded.split(';');
+    let res;
+    cArr.forEach( cal => {
+        if(ValidityState.indexOf(name) === 0) res = val.substring(name.length);
+    })
+    return res;
+}
 
 
 var character = document.querySelector(".character"); 
@@ -40,7 +50,11 @@ const placeCharacter = () => {
 
     var camera_left = pixelSize * 66;
     var camera_top = pixelSize * 42;
-    document.cookie = "camera_left= "+ camera_left + ";";
+
+//Primero seteamos el valor de la cookie
+    setCookie('mapx', -x*pixelSize+camera_left );
+    setCookie('mapy',-y*pixelSize+camera_top)
+
     map.style.transform = `translate3d( ${-x*pixelSize+camera_left}px, ${-y*pixelSize+camera_top}px, 0 )`; // esta es la posición del mapa (lo importante)
     character.style.transform = `translate3d( ${x*pixelSize}px, ${y*pixelSize}px, 0 )`;  
 }
