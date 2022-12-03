@@ -2,24 +2,25 @@
 function setCookie(cName,cValue) { // función para setear cookies
     document.cookie = cName + "=" + cValue  + ";path=/"};
 
-function getCookie(cName) {
-    const name = cName + "=";
-    const cDecoded = decodeURIComponent(document.cookie);
-    const cArr = cDecoded.split(';');
-    let res;
-    cArr.forEach( cal => {
-        if(ValidityState.indexOf(name) === 0) res = val.substring(name.length);
-    })
-    return res;
+function getCookie(c_name) {
+    if (document.cookie.length > 0) {
+        c_start = document.cookie.indexOf(c_name + "=");
+        if (c_start != -1) {
+            c_start = c_start + c_name.length + 1;
+            c_end = document.cookie.indexOf(";", c_start);
+            if (c_end == -1) c_end = document.cookie.length;
+            return unescape(document.cookie.substring(c_start, c_end));
+        }
+    }
+    return "";
 }
-
 
 var character = document.querySelector(".character"); 
 var map = document.querySelector(".map");
 
 //comienza en el centro del mapa
-var x = 90; 
-var y = 34;
+var x = getCookie('mapx'); 
+var y = getCookie('mapy');
 var held_directions = []; //Que botones estamos apretando
 var speed = 1; // Razón de movimiento del personaje
 
@@ -52,9 +53,9 @@ const placeCharacter = () => {
     var camera_top = pixelSize * 42;
 
 //Primero seteamos el valor de la cookie
-    setCookie('mapx', -x*pixelSize+camera_left );
-    setCookie('mapy',-y*pixelSize+camera_top)
-
+    setCookie('mapx', x);
+    setCookie('mapy',y);
+    
     map.style.transform = `translate3d( ${-x*pixelSize+camera_left}px, ${-y*pixelSize+camera_top}px, 0 )`; // esta es la posición del mapa (lo importante)
     character.style.transform = `translate3d( ${x*pixelSize}px, ${y*pixelSize}px, 0 )`;  
 }
