@@ -23,9 +23,13 @@ class RevealingText {
 
     warpToDone() {
         clearTimeout(this.timeout);
-        this.isDone = true;
+        this.isDone = false;
         this.element.querySelectorAll("span").forEach(s => {
+<<<<<<< Updated upstream
             s.classList.add("revealed");
+=======
+        s.classList.delete("revealed");
+>>>>>>> Stashed changes
         })
     }
 

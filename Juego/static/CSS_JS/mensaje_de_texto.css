@@ -1,16 +1,12 @@
 .TextMessage {
     position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 36px;
-    padding: 4px;
-    background: #ffe8d2;
-    border-top: 1px solid #A48465;
-    color: #3A160D;
+    top:10px;
+    left: 30px;
+    color: #000000;
 }
 
 .TextMessage_p {
+    background-image: url(/Juego/static/image/Arte_UI/cuadrosdetexto.png);
     margin: 0;
     font-size: 12px;
 }
