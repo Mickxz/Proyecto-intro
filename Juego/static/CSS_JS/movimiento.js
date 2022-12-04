@@ -79,7 +79,10 @@ const keys = {
     37:directions.left,
     39:directions.right,
     40:directions.down,
+    69:true,
+    101:true,
 }
+
 
 document.addEventListener("keydown", (i) => {
     var inter = keys[i.which];
