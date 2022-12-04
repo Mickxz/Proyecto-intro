@@ -48,7 +48,7 @@ body {
 }
 .map {
     image-rendering: pixelated;
-    background-image: url(https://github.com/Mickxz/Proyecto-intro/blob/e4cf8b75043915330ca8dc31995c2fa11672db29/Juego/static/image/Mapas/new_map.png?raw=true);
+    background-image: url(https://github.com/Mickxz/Proyecto-intro/blob/21ad48a27daa69eddacd302a529b023761db97bf/Juego/static/mapa_final.png?raw=true);
     background-size:contain;
     width:1000%;
     height:1000%;

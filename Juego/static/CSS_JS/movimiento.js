@@ -14,13 +14,33 @@ function getCookie(c_name) {
     }
     return "";
 }
-
+var dialogo = document.querySelector("#dialogo");
+var respuesta = document.querySelector("#respuesta");
 var character = document.querySelector(".character"); 
 var map = document.querySelector(".map");
 
 //comienza en el centro del mapa
-var x = getCookie('mapx'); 
-var y = getCookie('mapy');
+var x = parseFloat(getCookie('mapx')); 
+var y = parseFloat(getCookie('mapy'));
+
+function colide(a,b) {
+
+    const rect1 = {x: 0, y: 0, w: 10, h: 10}; // Posición, anchura y altura de la HitBox
+    var rect2 = {x: a, y:b, w: 10, h: 10}; // Posición, anchura y altura de la HitBox del jugador
+
+    if (rect1.x < rect2.x + rect2.w &&
+        rect1.x + rect1.w > rect2.x &&
+        rect1.y < rect2.y + rect2.h &&
+        rect1.h + rect1.y > rect2.y) {
+    // ¡colisión detectada!
+        return true;
+    } else {
+        // no hay colisión
+        return false;
+    }
+};
+
+var held_interactions = [false]; //Lo mismo que arriba pero para otra cosa
 var held_directions = []; //Que botones estamos apretando
 var speed = 1; // Razón de movimiento del personaje
 
@@ -31,11 +51,16 @@ const placeCharacter = () => {
 
     const held_direction = held_directions[0];
     if (held_direction) {
-        if (held_direction === directions.right) {x += speed;}
-        if (held_direction === directions.left) {x -= speed;}
-        if (held_direction === directions.down) {y += speed;}
-        if (held_direction === directions.up) {y -= speed;}
+        if (held_direction === directions.right) {x += speed,console.log(x,y);}
+        if (held_direction === directions.left) {x -= speed,console.log(x,y);}
+        if (held_direction === directions.down) {y += speed,console.log(x,y);}
+        if (held_direction === directions.up) {y -= speed,console.log(x,y);}
         character.setAttribute("facing", held_direction);
+    }
+    
+    const held_interaction = held_interactions[0];
+    if (held_interaction === true) {
+        if (colide(x,y)== true) {console.log("Hola")}
     }
     character.setAttribute("walking",held_direction ? "true" : "false" );
     //limits
