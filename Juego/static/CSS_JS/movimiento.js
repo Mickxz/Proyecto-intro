@@ -1,10 +1,31 @@
-var character = document.querySelector(".character"); 
+var character = document.querySelector(".character");
 var map = document.querySelector(".map");
+var dialogo = document.querySelector("#dialogo");
+var respuesta = document.querySelector("#respuesta");
 
 //comienza en el centro del mapa
 var x = 90; 
 var y = 34;
+
+function colide(a,b) {
+
+    const rect1 = {x: 0, y: 0, w: 10, h: 10}; // Posición, anchura y altura de la HitBox
+    var rect2 = {x: a, y:b, w: 10, h: 10}; // Posición, anchura y altura de la HitBox del jugador
+
+    if (rect1.x < rect2.x + rect2.w &&
+        rect1.x + rect1.w > rect2.x &&
+        rect1.y < rect2.y + rect2.h &&
+        rect1.h + rect1.y > rect2.y) {
+    // ¡colisión detectada!
+        return true;
+    } else {
+        // no hay colisión
+        return false;
+    }
+};
+
 var held_directions = []; //Que botones estamos apretando
+var held_interactions = [false]; //Lo mismo que arriba pero para otra cosa
 var speed = 1; // Razón de movimiento del personaje
 
 const placeCharacter = () => {
@@ -14,11 +35,16 @@ const placeCharacter = () => {
 
     const held_direction = held_directions[0];
     if (held_direction) {
-        if (held_direction === directions.right) {x += speed;}
-        if (held_direction === directions.left) {x -= speed;}
-        if (held_direction === directions.down) {y += speed;}
-        if (held_direction === directions.up) {y -= speed;}
+        if (held_direction === directions.right) {x += speed,console.log(x,y);}
+        if (held_direction === directions.left) {x -= speed,console.log(x,y);}
+        if (held_direction === directions.down) {y += speed,console.log(x,y);}
+        if (held_direction === directions.up) {y -= speed,console.log(x,y);}
         character.setAttribute("facing", held_direction);
+    }
+    
+    const held_interaction = held_interactions[0];
+    if (held_interaction === true) {
+        if (colide(x,y)== true) {console.log("Hola")}
     }
     character.setAttribute("walking",held_direction ? "true" : "false" );
     //limits
@@ -53,17 +79,37 @@ const directions = {
     left:"left",
     right:"right",
 }
+
 const keys = {
     38:directions.up,
     37:directions.left,
     39:directions.right,
     40:directions.down,
+    69:true,
+    101:true,
 }
 
-document.addEventListener("keydown", (e) => {   //Cuando apretas un boton
-    var dir= keys[e.which];
-    if(dir && held_directions.indexOf(dir) === -1) {
+document.addEventListener("keydown", (i) => {
+    var inter = keys[i.which];
+    if (held_interactions.indexOf(inter) === -1) {
+        held_interactions.unshift(inter)
+        z = true
+    }
+})
+
+document.addEventListener("keyup", (i) => {
+    var inter = keys[i.which];
+    var index = held_interactions.indexOf(inter)
+    if (index > -1) {
+        held_interactions.splice(0,1,false)
+    }
+})
+
+document.addEventListener("keydown", (e) => {   //Cuando aprietas un boton
+    var dir = keys[e.which];
+    if(held_directions.indexOf(dir) === -1) {
         held_directions.unshift(dir)
+        z = false
     }
 })
 
@@ -74,8 +120,3 @@ document.addEventListener("keyup", (e) => {  //cuando dejas de apretar un boton
         held_directions.splice(index, 1)
     }
 });
-
-
-
-
-
