@@ -20,8 +20,8 @@ var character = document.querySelector(".character");
 var map = document.querySelector(".map");
 
 //comienza en el centro del mapa
-var x = parseFloat(getCookie('mapx')); 
-var y = parseFloat(getCookie('mapy'));
+var x = getCookie('mapx'); 
+var y = getCookie('mapy');
 
 function colide(a,b) {
 
