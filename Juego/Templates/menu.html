@@ -8,14 +8,74 @@
         <source src="/static/SFX/tittle.mp3" type="audio/mp3">
     </audio>
     <div class="titulo">
-        <h1>THE PRESTIGIUS WAY</h1>
+        <h1>THE PRESTIGIOUS WAY</h1>
     </div>
     <div class="contenedor">
         <img src="/static/image/Arte_UI/cuadrosdetexto.png" height="120px" widht="110px">
         <div class="text">
             <div style="flex-direction: column; width: 110px; display: flex;">
-                <a href="/index" style="width: 200px;">INICIAR PARTIDA</a>
+                
+                <a href="/index" onClick="return checkCookie()" style="width: 200px;">INICIAR PARTIDA</a>
+                <script type="text/javascript">
+                    function checkCookie() {
+                        function getCookie(cName) {
+                            const name = cName + "=";
+                            const cDecoded = decodeURIComponent(document.cookie);
+                            const cArr = cDecoded.split(';');
+                            let res;
+                            cArr.forEach( cal => {
+                                if(ValidityState.indexOf(name) === 0) res = val.substring(name.length);
+                            })
+                            return res;
+                        } 
+                        
+                        function doSomething() {
+                            var myCookie = getCookie("mapx");
+                        
+                            if (myCookie == null) {
+                                // do cookie doesn't exist stuff;
+                                setCookie('mapx',90)
+                                setCookie('mapy',34)
+                            }
+                            else {
+                                // do cookie exists stuff;
+
+                            }
+                        }
+                    return true
+                    }
+
+                </script>
                 <a href="/index" style="width: 200px;">CARGAR PARTIDA</a>
+                <script type="text/javascript">
+                    function checkCookie() {
+                        function getCookie(cName) {
+                            const name = cName + "=";
+                            const cDecoded = decodeURIComponent(document.cookie);
+                            const cArr = cDecoded.split(';');
+                            let res;
+                            cArr.forEach( cal => {
+                                if(ValidityState.indexOf(name) === 0) res = val.substring(name.length);
+                            })
+                            return res;
+                        } 
+                        
+                        function doSomething() {
+                            var myCookie = getCookie("mapx");
+                        
+                            if (myCookie == null) {
+                                // do cookie doesn't exist stuff;
+                                setCookie('mapx',-24)
+                            }
+                            else {
+                                // do cookie exists stuff;
+
+                            }
+                        }
+                    return true
+                    }
+
+                </script>
             </div>
         </div>
 
