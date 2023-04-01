@@ -125,9 +125,9 @@ document.addEventListener("keyup", (i) => {
     }
 })
 
-document.addEventListener("keydown", (e) => {   //Cuando aprietas un boton
-    var dir = keys[e.which];
-    if(held_directions.indexOf(dir) === -1) {
+document.addEventListener("keydown", (e) => {   //Cuando apretas un boton
+    var dir= keys[e.which];
+    if(dir && held_directions.indexOf(dir) === -1) {
         held_directions.unshift(dir)
         z = false
     }
@@ -140,6 +140,10 @@ document.addEventListener("keyup", (e) => {  //cuando dejas de apretar un boton
         held_directions.splice(index, 1)
     }
 });
+
+
+
+
 
 
 
